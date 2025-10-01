@@ -1,8 +1,26 @@
 <?php
+session_start();
 
-$config = require __DIR__ . '/config.php';
-$sessionName = $config['login']['session_name'];
-unset($_SESSION[$sessionName]);
+// Unset all session variables
+$_SESSION = [];
+
+// Delete the session cookie (if any)
+if (ini_get("session.use_cookies")) {
+    $params = session_get_cookie_params();
+    setcookie(
+        session_name(), 
+        '', 
+        time() - 42000,
+        $params["path"], 
+        $params["domain"],
+        $params["secure"], 
+        $params["httponly"]
+    );
+}
+
+// Destroy the session
 session_destroy();
+
+// Redirect to login
 header('Location: login.php');
 exit;

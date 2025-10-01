@@ -180,6 +180,33 @@ $username = ucfirst($_SESSION['username']);
 </section>
 
 
+<!-- Add Employee Modal -->
+<div x-show="showAddModal" x-cloak
+     x-transition:enter="modal-enter"
+     x-transition:enter-end="modal-enter-active"
+     x-transition:leave="modal-leave"
+     x-transition:leave-end="modal-leave-active"
+     class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+  <div class="bg-white dark:bg-gray-800 rounded-lg w-full max-w-md p-6 relative shadow-lg transform transition-all fade-scale">
+    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">Add New Employee</h3>
+    <button @click="showAddModal = false" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">&times;</button>
+    <form method="POST" action="add_employee.php" class="space-y-2">
+      <input type="text" name="full_name" placeholder="Full Name" class="w-full border rounded p-2" required>
+      <input type="text" name="staff_id" placeholder="Staff ID" class="w-full border rounded p-2" required>
+      <input type="text" name="department" placeholder="Department / Role" class="w-full border rounded p-2" required>
+      <input type="date" name="date_of_employment" class="w-full border rounded p-2" required>
+      <input type="number" name="salary" placeholder="Salary" class="w-full border rounded p-2" required>
+      <input type="text" name="ssnit" placeholder="SSNIT Number" class="w-full border rounded p-2" required>
+      <input type="text" name="contact" placeholder="Contact Info" class="w-full border rounded p-2" required>
+      <input type="text" name="bank_account" placeholder="Bank Account" class="w-full border rounded p-2" required>
+      <div class="flex justify-end space-x-2 mt-2">
+        <button type="button" @click="showAddModal = false" class="px-4 py-2 rounded border hover:bg-gray-100 dark:hover:bg-gray-700 transition">Cancel</button>
+        <button type="submit" class="px-4 py-2 rounded bg-teal-500 text-white hover:bg-teal-600 transition">Add</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 </main>
 
 <script>
