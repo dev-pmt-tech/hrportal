@@ -4,8 +4,8 @@
 // Database configuration
 $host = 'localhost';       // Database host
 $db   = 'hr_portal';       // Database name
-$user = 'root';            // Database username
-$pass = '';                // Database password
+$user = 'transportadmin';            // Database username
+$pass = 'Ominidb123$';                // Database password
 $charset = 'utf8mb4';      // Charset
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
