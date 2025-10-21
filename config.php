@@ -4,11 +4,7 @@
 // Database configuration
 $host = 'localhost';       // Database host
 $db   = 'hr_portal';       // Database name
-<<<<<<< HEAD
-$user = 'transportadmin1';            // Database username
-=======
 $user = 'transportadmin';            // Database username
->>>>>>> 9c37376e3602a47338fc9738bfb0bc03c797cda7
 $pass = 'Ominidb123$';                // Database password
 $charset = 'utf8mb4';      // Charset
 
